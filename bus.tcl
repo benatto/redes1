@@ -1,3 +1,15 @@
+if { $argc != 1 } {
+	puts "Erro ao executar a simulação. Uso: ns bus.tcl"
+	puts " \$<numero de transmissores>"
+
+	exit
+}
+
+#Gatting transmissors count
+set tcount [lindex $argv 0]
+
+puts "Simulation started using $tcount transmissors"
+
 #Create a new instance of NS2
 set ns [new Simulator]
 
@@ -57,6 +69,13 @@ $ns at 0 "$cbr start"
 
 $ns at 3 "finish"
 
+#************************************************************#
+# PROC: spawn_messages									  	 #
+# DESCRIPTION: spawn all messages from all SRCS to all DESTS #
+# PARAMS:													 #
+# 		 SRC: An array with transmissors ID's				 #
+# 		 DEST: An array with destination ID's                #
+#************************************************************# 		 
 proc spawn_messages {SRC,DEST} {
 
 }
