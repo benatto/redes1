@@ -57,6 +57,10 @@ $ns at 0 "$cbr start"
 
 $ns at 3 "finish"
 
+proc spawn_messages {SRC,DEST} {
+
+}
+
 proc finish {} {
 	global ns tracefile namfile
 	$ns flush-trace
